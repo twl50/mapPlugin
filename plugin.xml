@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="CldMap" version="1.0.0" 
+	xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>mapPlugin</name>
+	<js-module name="mapPlugin" src="www/mapPlugin.js">
+		<clobbers target="cordova.plugins.mapPlugin" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="mapPlugin">
+				<param name="android-package" value="CldMap.mapPlugin" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml"></config-file>
+		<source-file src="src/android/mapPlugin.java" target-dir="src/CldMap" />
+	</platform>
+</plugin>
